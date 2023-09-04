@@ -1,0 +1,8 @@
+static Future deleteAllElements() async {
+    final dbData = await FirebaseFirestore.instance
+        .collection(FirebaseAuth.instance.currentUser!.email!);
+    var snapshots = await dbData.get();
+    for (var doc in snapshots.docs) {
+      await doc.reference.delete();
+    }
+  }
