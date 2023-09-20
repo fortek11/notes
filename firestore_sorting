@@ -1,0 +1,5 @@
+//firestore asc sorting using firebase auto sorting completion
+
+FirebaseFirestore.instance.collection("outlets")
+.where("", ">", "200")
+.orderBy("", "asc")
